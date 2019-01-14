@@ -1,0 +1,8 @@
+java hdfs.NameNode &
+sleep 10
+ssh -f yoda "cd 2A/SYS_CONCURRENTS/Projet/Hidoop/hidoop_git;pwd;java hdfs.DataNode 4001 147.127.133.199"
+ssh -f cobalt "cd 2A/SYS_CONCURRENTS/Projet/Hidoop/hidoop_git;java hdfs.DataNode 4001 147.127.133.69"
+ssh -f angel "cd 2A/SYS_CONCURRENTS/Projet/Hidoop/hidoop_git;java hdfs.DataNode 4001 147.127.133.165"
+sleep 10
+java application.MyMapReduce data/filesample.txt
+
